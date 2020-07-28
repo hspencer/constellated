@@ -7,14 +7,14 @@ class Note {
         this.springDist = this.r;
         this.creatingSpring = false;
         let margin = w / 48;
-        this.x = random(margin, w - margin);
-        this.y = random(h - margin, margin);
+        this.x = w/2 + random(-5, 5); //random(margin, w - margin);
+        this.y = h/2 + random(-5, 5); //random(h - margin, margin);
         this.col = getCol();
         this.over = false;
         this.touched = false;
         let f = {
-            x: random(-.015, .015),
-            y: random(-.015, .015)
+            x: random(-.00015, .00015),
+            y: random(-.00015, .00015)
         }
         let options = {
             friction: 0,
