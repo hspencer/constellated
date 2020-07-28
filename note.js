@@ -132,7 +132,7 @@ class Spring {
 }
 
 
-let col = ["#DB4813", "#740013", "#74009D", "#DEC449", "#271262", "#A6E94E", "#FF374A", "#6BA4FF", "#1451FA", "#7014FA", "#107040"];
+let col = ["#AB6D05", "#B8300F", "#9E400C", "#AD160E", "#B55D05"];
 
 function getCol() {
     let i = Math.floor(random(col.length));
