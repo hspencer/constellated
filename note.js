@@ -9,6 +9,8 @@ class Note {
         let margin = w / 48;
         this.x = w/2 + random(-5, 5); //random(margin, w - margin);
         this.y = h/2 + random(-5, 5); //random(h - margin, margin);
+        this.px = this.x;
+        this.py = this.y;
         this.col = getCol();
         this.over = false;
         this.touched = false;
@@ -65,16 +67,15 @@ class Note {
             strokeWeight(5);
             point(0, 0);
             g.blendMode(MULTIPLY);
-            g.stroke(0);
-            g.strokeWeight(5);
-            g.point(0, 0);
+            g.stroke(0, 70);
+            g.strokeWeight(2);
+            g.line(this.x, this.y, this.px, this.py);
             g.blendMode(BLEND);
-
         }
         if (!this.over && !this.touched) {
-            stroke(0, 45);
+            noStroke();//stroke(0, 45);
             strokeWeight(1.5);
-            fill(this.col + "66");
+            fill(this.col + "99");
             ellipse(0, 0, this.r * 2);
         }
 
@@ -104,6 +105,8 @@ class Note {
             }
             this.springDist++;
         }
+        this.px = this.x;
+        this.py = this.y;
     }
 }
 
@@ -132,7 +135,7 @@ class Spring {
 }
 
 
-let col = ["#AB6D05", "#B8300F", "#9E400C", "#AD160E", "#B55D05"];
+let col = ["#AB6D05", "#B8300F", "#9E400C", "#AD160E", "#B55D05", "#d5c55f", "#956a07"];
 
 function getCol() {
     let i = Math.floor(random(col.length));
