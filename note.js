@@ -64,13 +64,8 @@ class Note {
             stroke(0, 20);
             ellipse(0, 0, this.r * 2);
             stroke(0);
-            strokeWeight(5);
+            strokeWeight(2);
             point(0, 0);
-            g.blendMode(MULTIPLY);
-            g.stroke(0, 70);
-            g.strokeWeight(2);
-            g.line(this.x, this.y, this.px, this.py);
-            g.blendMode(BLEND);
         }
         if (!this.over && !this.touched) {
             noStroke();//stroke(0, 45);

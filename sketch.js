@@ -170,17 +170,26 @@ function saveFile() {
 function updateGraphics() {
 	// draw springs trails
 	for (spring of springs) {
-		g.stroke(spring.col + "33");
+		g.stroke(spring.col + "55");
 		g.strokeWeight(1);
 		g.line(spring.bodyA.position.x, spring.bodyA.position.y, spring.bodyB.position.x, spring.bodyB.position.y);
+
+		g.fill(spring.col + "55");
+		g.noStroke();
+		g.beginShape();
+		g.vertex(spring.bodyA.position.x, spring.bodyA.position.y);
+		g.vertex(spring.bodyB.position.x, spring.bodyB.position.y);
+		g.vertex(spring.bodyB.positionPrev.x, spring.bodyB.positionPrev.y);
+		g.vertex(spring.bodyA.positionPrev.x, spring.bodyA.positionPrev.y);
+		g.endShape();
 	}
-	for (n of notes) {
-		if (n.touched) {
-			g.stroke(0, 190);
-			g.strokeWeight(1);
-			g.point(n.x, n.y);
-		}
-	}
+	// for (n of notes) {
+	// 	if (n.touched) {
+	// 		g.stroke(0, 190);
+	// 		g.strokeWeight(1);
+	// 		g.point(n.x, n.y);
+	// 	}
+	// }
 	g.blendMode(ADD);
 	g.fill(255, 1);
 	g.noStroke();
